@@ -205,11 +205,11 @@ body {
 }
 
 .stat-box {
-    background-color: #FFFFFF;
+    background-color: #0768d6;
     border-radius: 15px;
     box-shadow: 0px 2px 10px rgba(175, 137, 255, 0.15);
     padding: 19px 21px;
-    color: #FFFFFF;
+    color: #ffffff;
     font-family: 'Poppins', sans-serif;
 }
 
