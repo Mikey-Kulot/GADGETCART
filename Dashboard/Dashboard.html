@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <nav class="sidebar" aria-label="Main Navigation">
+            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/84ef3cde157321c812e9a26ee08fb3139709f9d72d35486a54c3f5c7c6297629?placeholderIfAbsent=true&apiKey=584f1534c39b49f09a9836d65163c376" alt="Company Logo" class="logo">
+            <ul class="nav-items">
+                <li><a href="#dashboard" class="active" aria-current="page">Dashboard</a></li>
+                <li><a href="#customers">Customers</a></li>
+                <li><a href="#orders">Orders</a></li>
+                <li><a href="#shipments">Shipments</a></li>
+                <li><a href="#payments">Payments</a></li>
+                <li><a href="#settings">Settings</a></li>
+            </ul>
+        </nav>
+        <main class="main-content">
+            <header class="header">
+                <div class="revenue-section">
+                    <h1>Total Revenue</h1>
+                    <p class="revenue-amount" aria-label="Total revenue: $45,365.00">$ 45,365.00</p>
+                    <div class="revenue-change positive" aria-label="Positive revenue change: $1,294">
+                        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/4c6740b584980ab6570680eb85da1e439fde4fe2e04faa9d3ce9d97cf74f1327?placeholderIfAbsent=true&apiKey=584f1534c39b49f09a9836d65163c376" alt="" class="change-icon">
+                        <span>$1,294</span>
+                    </div>
+                    <div class="revenue-change negative" aria-label="Negative revenue change: $1,294">
+                        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/9e4a2b0fc73a4ec1a534c98ed509da20359002afa88db6690ec9a3fe96a98f5b?placeholderIfAbsent=true&apiKey=584f1534c39b49f09a9836d65163c376" alt="" class="change-icon">
+                        <span>$1,294</span>
+                    </div>
+                </div>
+                <div class="search-profile">
+                    <div class="search-bar">
+                        <label for="search-input" class="visually-hidden">Search items</label>
+                        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/c54ed2d77fc3ac4a506280345ee173be27f803b6508d775a56696300a1f81996?placeholderIfAbsent=true&apiKey=584f1534c39b49f09a9836d65163c376" alt="" class="search-icon">
+                        <input type="text" id="search-input" placeholder="Search Items Here....." aria-label="Search items">
+                    </div>
+                    <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/bdb4787a252353e338fd37cd2c9c3489ca1baddb67ed5b88446eec8c378fd0ab?placeholderIfAbsent=true&apiKey=584f1534c39b49f09a9836d65163c376" alt="User profile" class="profile-image">
+                </div>
+            </header>
+            <h2 class="analytics-title">ANALYTICS</h2>
+            <div class="content-grid">
+                <section class="analytics-section" aria-label="Analytics Overview">
+                    <div class="total-sale">
+                        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/83cdbe1c8e6ca7b245c1ac24a52140d4d5dcc9cd9fe564b0de6e1923ca29d5d4?placeholderIfAbsent=true&apiKey=584f1534c39b49f09a9836d65163c376" alt="Total sale graph" class="sale-graph">
+                        <h3>Total Sale</h3>
+                    </div>
+                    <div class="orders-info">
+                        <h3>Orders</h3>
+                        <p>Orders Customer Information</p>
+                        <div class="order-stats">
+                            <div class="stat-box">
+                                <h4>Shipped orders</h4>
+                                <p class="stat-number">67</p>
+                            </div>
+                            <div class="stat-box">
+                                <h4>Pending orders</h4>
+                                <p class="stat-number">09</p>
+                            </div>
+                        </div>
+                        <div class="stat-box new-orders">
+                            <h4>New orders</h4>
+                            <p class="stat-number">35</p>
+                        </div>
+                    </div>
+                </section>
+                <section class="detailed-stats" aria-label="Detailed Statistics">
+                    <div class="stats-overview">
+                        <div class="stat-item">
+                            <h3>Total Visits</h3>
+                            <p>10.8m</p>
+                        </div>
+                        <div class="stat-item">
+                            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/ead200b58229658e3c4ff6eccc6cafeba50d85a8fbacfbd27dd15f21790d4519?placeholderIfAbsent=true&apiKey=584f1534c39b49f09a9836d65163c376" alt="" class="stat-icon">
+                            <div>
+                                <h3>Total Sales</h3>
+                                <p>100,345</p>
+                            </div>
+                        </div>
+                        <div class="stat-item">
+                            <h3>Total Made</h3>
+                            <p>$200k</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>Orders Completed</h3>
+                            <p>98,771</p>
+                        </div>
+                    </div>
+                    <div class="stats-details">
+                        <div class="store-visits">
+                            <h3>Stats Overview</h3>
+                            <p>Information about store visits</p>
+                            <div class="gender-stats">
+                                <div class="gender-stat">
+                                    <h4>Women</h4>
+                                    <div class="progress-bar" aria-label="Women's visits: 63%">
+                                        <div class="progress" style="width: 63%"></div>
+                                    </div>
+                                    <p>63%</p>
+                                </div>
+                                <div class="gender-stat">
+                                    <h4>Men</h4>
+                                    <div class="progress-bar" aria-label="Men's visits: 88%">
+                                        <div class="progress" style="width: 88%"></div>
+                                    </div>
+                                    <p>88%</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="inbox">
+                            <h3>Inbox</h3>
+                            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/92beef8d19b554e132340a4044549bf6138bff5203d6509dd34b7e9a2bf36d3a?placeholderIfAbsent=true&apiKey=584f1534c39b49f09a9836d65163c376" alt="" class="inbox-icon">
+                            <div class="message">
+                                <p>Waiting for order#12345</p>
+                                <span>4:39</span>
+                            </div>
+                            <div class="message">
+                                <p>Customer support id#22234</p>
+                                <span>11:07</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="customers-section" aria-label="Customer Information">
+                    <h2>Customers</h2>
+                    <p>Information About your Customers</p>
+                    <div class="customer-types">
+                        <div class="customer-type">
+                            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/24bd09d6c05caa3a00c258408bec5c65b88063e0be8ec7598f1b2cd738b03cf0?placeholderIfAbsent=true&apiKey=584f1534c39b49f09a9836d65163c376" alt="" class="customer-icon">
+                            <p>Current Customers</p>
+                        </div>
+                        <div class="customer-type">
+                            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/bcaaea9d1bb0b055c6dae8458408b8266e2dd2607d045992a3db02b948aac52f?placeholderIfAbsent=true&apiKey=584f1534c39b49f09a9836d65163c376" alt="" class="customer-icon">
+                            <p>Target Customers</p>
+                        </div>
+                        <div class="customer-type">
+                            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/6f29c5fcda8ce72a220795394754fcda67a8fcf8c3f9f58bc7514ae8cfc5190e?placeholderIfAbsent=true&apiKey=584f1534c39b49f09a9836d65163c376" alt="" class="customer-icon">
+                            <p>New Customers</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

@@ -1,0 +1,567 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', 'Poppins', 'DM Sans', 'Roboto', sans-serif;
+    background-color: #F6F6F6;
+    color: #000000;
+    line-height: 1.5;
+    overflow: hidden;
+}
+
+.dashboard-container {
+    display: flex;
+    width: 1920px;
+    height: 1080px;
+}
+
+.sidebar {
+    width: 25%;
+    background-color: #FFFFFF;
+    border-radius: 0 10px 10px 0;
+    padding: 42px 33px;
+    height: 100%;
+    overflow-y: auto;
+}
+
+.logo {
+    width: 232px;
+    margin-bottom: 102px;
+}
+
+.nav-items {
+    list-style-type: none;
+}
+
+.nav-items li {
+    margin-bottom: 69px;
+}
+
+.nav-items a {
+    text-decoration: none;
+    color: #000000;
+    font-size: 24px;
+    padding: 10px;
+    display: block;
+    transition: background-color 0.3s;
+}
+
+.nav-items a:hover,
+.nav-items a:focus {
+    background-color: #F6F6F6;
+    outline: none;
+}
+
+.nav-items a.active {
+    font-weight: bold;
+}
+
+.main-content {
+    width: 75%;
+    padding: 20px;
+    height: 100%;
+    overflow-y: auto;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.revenue-section {
+    font-family: 'Poppins', sans-serif;
+}
+
+.revenue-amount {
+    font-size: 28px;
+    font-weight: 600;
+    margin: 13px 0;
+}
+
+.revenue-change {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 500;
+    margin-top: 10px;
+}
+
+.revenue-change.positive {
+    color: #19C332;
+}
+
+.revenue-change.negative {
+    color: #FF4588;
+}
+
+.change-icon {
+    width: 14px;
+    margin-right: 7px;
+}
+
+.search-profile {
+    display: flex;
+    align-items: center;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    background-color: #FFFAFA;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    padding: 13px 24px;
+    margin-right: 20px;
+    width: 400px;
+}
+
+.search-icon {
+    width: 26px;
+    margin-right: 14px;
+}
+
+.search-bar input {
+    border: none;
+    background: transparent;
+    font-size: 12px;
+    font-family: 'DM Sans', sans-serif;
+    width: 100%;
+}
+
+.profile-image {
+    width: 112px;
+    border-radius: 50%;
+}
+
+.analytics-title {
+    color: #00A5FE;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 900;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.content-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.analytics-section {
+    grid-column: 1 / -1;
+    display: flex;
+    gap: 20px;
+}
+
+.total-sale {
+    width: 59%;
+    background-color: #FFFFFF;
+    border-radius: 15px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+    padding: 36px 21px;
+    text-align: center;
+    font-family: 'Mulish', sans-serif;
+    font-weight: 600;
+    font-size: 24px;
+    position: relative;
+}
+
+.sale-graph {
+    width: 100%;
+    height: auto;
+}
+
+.orders-info {
+    width: 41%;
+    background-color: #FFFCFC;
+    border-radius: 15px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.05);
+    padding: 18px 27px;
+    font-family: 'DM Sans', sans-serif;
+}
+
+.orders-info h3 {
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.orders-info > p {
+    color: #A7A7A7;
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 8px;
+}
+
+.order-stats {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 13px;
+}
+
+.stat-box {
+    background-color: #FFFFFF;
+    border-radius: 15px;
+    box-shadow: 0px 2px 10px rgba(175, 137, 255, 0.15);
+    padding: 19px 21px;
+    color: #FFFFFF;
+    font-family: 'Poppins', sans-serif;
+}
+
+.stat-box h4 {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.stat-number {
+    font-size: 60px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.new-orders {
+    margin-top: 45px;
+    width: 239px;
+}
+
+.detailed-stats {
+    background-color: #FFFFFF;
+    border-radius: 15px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.05);
+    padding: 35px 0 15px;
+}
+
+.stats-overview {
+    display: flex;
+    justify-content: space-around;
+    font-family: 'Roboto', sans-serif;
+    color: #7B7878;
+}
+
+.stat-item {
+    background-color: #EEEEEE;
+    border-radius: 10px;
+    padding: 25px;
+    text-align: center;
+}
+
+.stat-icon {
+    width: 25px;
+    margin-bottom: 9px;
+}
+
+.stats-details {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 25px;
+    padding: 0 20px;
+}
+
+.store-visits, .inbox {
+    width: 48%;
+}
+
+.gender-stats {
+    margin-top: 17px;
+}
+
+.gender-stat {
+    margin-bottom: 10px;
+}
+
+.progress-bar {
+    background-color: #EEEEEE;
+    border-radius: 4px;
+    height: 8px;
+    margin: 5px 0;
+}
+
+.progress {
+    height: 100%;
+    border-radius: 4px;
+}
+
+.gender-stat:first-child .progress {
+    background-color: #FFC029;
+}
+
+.gender-stat:last-child .progress {
+    background-color: #FF6B6B;
+}
+
+.inbox {
+    border-left: 1px solid rgba(0, 0, 0, 0.25);
+    padding-left: 20px;
+}
+
+.inbox-icon {
+    width: 36px;
+    margin-bottom: 17px;
+}
+
+.message {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+.message span {
+    color: #9FA2B4;
+}
+
+.customers-section {
+    background-color: #FFFDFD;
+    border-radius: 15px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.05);
+    padding: 16px 19px;
+    grid-column: 2;
+    grid-row: 2;
+}
+
+.customers-section h2 {
+    color: #535353;
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.customers-section > p {
+    color: #A7A7A7;
+    font-size: 14px;
+    font-weight: 600;
+    margin-top: 8px;
+}
+
+.customer-types {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.customer-type {
+    text-align: center;
+}
+
+.customer-icon {
+    width: 138px;
+    border-radius: 50%;
+    margin-bottom: 9px;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+@media (max-width: 1920px) {
+    .dashboard-container {
+        width: 100%;
+        height: 100vh;
+    }
+}
+
+@media (max-width: 1200px) {
+    .sidebar {
+        width: 20%;
+    }
+
+    .main-content {
+        width: 80%;
+    }
+
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .search-profile {
+        width: 100%;
+        justify-content: space-between;
+        margin-top: 20px;
+    }
+
+    .content-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .analytics-section {
+        flex-direction: column;
+    }
+
+    .total-sale,
+    .orders-info {
+        width: 100%;
+    }
+
+    .order-stats {
+        flex-direction: column;
+    }
+
+    .stat-box {
+        margin-bottom: 20px;
+    }
+
+    .stats-overview {
+        flex-wrap: wrap;
+    }
+
+    .stat-item {
+        width: 45%;
+        margin-bottom: 20px;
+    }
+
+    .stats-details {
+        flex-direction: column;
+    }
+
+    .store-visits,
+    .inbox {
+        width: 100%;
+    }
+
+    .inbox {
+        border-left: none;
+        border-top: 1px solid rgba(0, 0, 0, 0.25);
+        padding-left: 0;
+        padding-top: 20px;
+        margin-top: 20px;
+    }
+
+    .customers-section {
+        grid-column: 1;
+    }
+
+    .customer-types {
+        flex-wrap: wrap;
+    }
+
+    .customer-type {
+        width: 45%;
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .dashboard-container {
+        flex-direction: column;
+    }
+
+    .sidebar,
+    .main-content {
+        width: 100%;
+    }
+
+    .sidebar {
+        border-radius: 0;
+        padding: 20px;
+    }
+
+    .logo {
+        width: 150px;
+        margin-bottom: 50px;
+    }
+
+    .nav-items li {
+        margin-bottom: 30px;
+    }
+
+    .nav-items a {
+        font-size: 18px;
+    }
+
+    .revenue-amount {
+        font-size: 24px;
+    }
+
+    .search-bar {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+
+    .profile-image {
+        width: 80px;
+    }
+
+    .analytics-title {
+        font-size: 20px;
+    }
+
+    .stat-number {
+        font-size: 40px;
+    }
+
+    .stat-item {
+        width: 100%;
+    }
+
+    .customer-type {
+        width: 100%;
+    }
+
+    .customer-icon {
+        width: 100px;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        width: 120px;
+        margin-bottom: 30px;
+    }
+
+    .nav-items a {
+        font-size: 16px;
+    }
+
+    .revenue-amount {
+        font-size: 20px;
+    }
+
+    .search-bar {
+        padding: 10px 15px;
+    }
+
+    .search-icon {
+        width: 20px;
+    }
+
+    .profile-image {
+        width: 60px;
+    }
+
+    .analytics-title {
+        font-size: 18px;
+    }
+
+    .stat-box h4 {
+        font-size: 16px;
+    }
+
+    .stat-number {
+        font-size: 32px;
+    }
+
+    .customers-section h2 {
+        font-size: 24px;
+    }
+
+    .customers-section > p {
+        font-size: 12px;
+    }
+
+    .customer-icon {
+        width: 80px;
+    }
+}
