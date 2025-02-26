@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="dashboard-container">
+      <nav class="sidebar" role="navigation" aria-label="Main navigation">
+        <div class="logo-container">
+          <div class="logo" role="img" aria-label="Company logo"></div>
+        </div>
+        <div class="nav-item">
+          <img
+            src="Frame.png"
+            alt="Dashboard icon"
+            class="nav-icon"
+          />
+          <a href="dashboard.html">Dashboard</a>
+        </div>
+        <div class="nav-item">
+          <img
+            src="Frame-1.png"
+            alt="Customers icon"
+            class="nav-icon"
+          />
+          <a href="customer.html">Customers</a>
+        </div>
+        <div class="nav-item">
+          <img
+            src="Frame-2.png"
+            alt="Orders icon"
+            class="nav-icon"
+          />
+          <a href="#">Orders</a>
+        </div>
+        <div class="nav-item">
+          <img
+            src="Frame-3.png"
+            alt="Shipments icon"
+            class="nav-icon"
+          />
+          <a href="#">Shipments</a>
+        </div>
+        <div class="nav-item">
+          <img
+            src="Frame-4.png"
+            alt="Payments icon"
+            class="nav-icon"
+          />
+          <a href="#">Payments</a>
+        </div>
+      </nav>
+
+      <main class="main-content">
+        <header class="header">
+          <div class="header-text">
+            <h1 class="page-title">Dashboard Overview</h1>
+            <p class="welcome-text">Welcome back, Admin</p>
+          </div>
+          <div class="header-actions">
+            <div class="search-container">
+              <img
+                src="Frame-5.png"
+                alt="Search"
+                class="search-icon"
+              />
+              <input
+                type="search"
+                placeholder="Search..."
+                class="search-input"
+                aria-label="Search"
+              />
+            </div>
+            <div class="user-avatar" role="img" aria-label="User  profile"></div>
+          </div>
+        </header>
+
+        <section class="stats-grid" aria-label="Statistics overview">
+          <div class="stat-card">
+            <img
+              src="Frame-6.png"
+              alt="Revenue icon"
+              class="stat-icon"
+            />
+            <div class="stat-content">
+              
+              <p class="stat-value">$0</p>
+              <div class="stat-change positive">
+                <img
+                  src="Frame-7.png"
+                  alt="Increase indicator"
+                  class="trend-icon"
+                />
+                <span>+0%</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-header">
+              <span>Orders</span>
+              <img
+                src="Frame-8.png"
+                alt="Orders icon"
+                class="stat-icon"
+              />
+            </div>
+            <p class="stat-value">0</p>
+            <div class="stat-change negative">
+              <img
+                src="Frame-9.png"
+                alt="Decrease indicator"
+                class="trend-icon"
+              />
+              <span>0%</span>
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-header">
+              <span>Customers</span>
+              <img
+                src="Frame-10.png"
+                alt="Customers icon"
+                class="stat-icon"
+              />
+            </div>
+            <p class="stat-value">0</p>
+            <div class="stat-change positive">
+              <img
+                src="Frame-11.png"
+                alt="Increase indicator"
+                class="trend-icon"
+              />
+              <span>+0%</span>
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-header">
+              <span>Products</span>
+              <img
+                src="Frame-12.png"
+                alt="Products icon"
+                class="stat-icon"
+              />
+            </div>
+            <p class="stat-value">0</p>
+            <div class="stat-change positive">
+              <img
+                src="Frame-13.png"
+                alt="Increase indicator"
+                class="trend-icon"
+              />
+              <span>0%</span>
+            </div>
+          </div>
+        </section>
+
+        <section class="dashboard-grid">
+          <div class="analytics-card">
+            <div class="card-header">
+              <h2 class="analytics-title">ANALYTICS</h2>
+              <div class="time-filter">Last 1 months</div>
+            </div>
+            <div
+              class="analytics-chart"
+              role="img"
+              aria-label="Sales analytics chart for the last 6 months"
+            >
+              <div class="chart-bars">
+                <div class="chart-bar" style="height: 0%" data-value="0%"></div>
+                <div class="chart-bar" style="height: 0%" data-value="0%"></div>
+                <div class="chart-bar" style="height: 0%" data-value="0%"></div>
+                <div class="chart-bar" style="height: 0%" data-value="0%"></div>
+                <div class="chart-bar" style="height: 0%" data-value="0%"></div>
+                <div class="chart-bar" style="height: 0%" data-value="0%"></div>
+              </div>
+              <div class="chart-labels">
+                <span>Jan</span>
+                <span>Feb</span>
+                <span>Mar</span>
+                <span>Apr</span>
+                <span>May</span>
+                <span>Jun</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="orders-card">
+            <div class="card-header">
+              <h2 class="orders-title">Recent Orders</h2>
+              <button class="view-all-btn">View All</button>
+            </div>
+            <div class="orders-table-container">
+              <table class="orders-table">
+                <thead>
+                  <tr>
+                    <th>Order ID</th>
+                    <th>Customer</th>
+                    <th>Product</th>
+                    <th>Amount</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>
+                      <span class="status-badge completed">Completed</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><span class="status-badge pending">Pending</span></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>
+                      <span class="status-badge processing">Processing</span>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <section class="dashboard-grid secondary-grid">
+          <div class="top-products-card">
+            <div class="card-header">
+              <h2 class="section-title">Top Products</h2>
+              <button class="view-all-btn">View All</button>
+            </div>
+            <div class="products-list">
+              <div class="product-item">
+                <img
+                  src="Frame-12.png"
+                  alt="Product"
+                  class="product-image"
+                />
+                <div class="product-info">
+                  <h3 class="product-name"></h3>
+                  <p class="product-sales"></p>
+                </div>
+                <span class="product-price"></span>
+              </div>
+              <div class="product-item">
+                <img
+                  src="Frame-12.png"
+                  alt="Product"
+                  class="product-image"
+                />
+                <div class="product-info">
+                  <h3 class="product-name"></h3>
+                  <p class="product-sales"></p>
+                </div>
+                <span class="product-price"></span>
+              </div>
+              <div class="product-item">
+                <img
+                  src="Frame-12.png"
+                  alt="Product"
+                  class="product-image"
+                />
+                <div class="product-info">
+                  <h3 class="product-name"></h3>
+                  <p class="product-sales"></p>
+                </div>
+                <span class="product-price"> </span>
+              </div>
+            </div>
+          </div>
+
+          <div class="recent-activity-card">
+            <div class="card-header">
+              <h2 class="section-title">Recent Activity</h2>
+              <button class="view-all-btn">View All</button>
+            </div>
+            <div class="activity-list">
+              <div class="activity-item">
+                <div class="activity-icon order-icon"></div>
+                <div class="activity-info">
+                  <p class="activity-text"></p>
+                  <span class="activity-time"></span>
+                </div>
+              </div>
+              <div class="activity-item">
+                <div class="activity-icon payment-icon"></div>
+                <div class="activity-info">
+                  <p class="activity-text">
+                    
+                  </p>
+                  <span class="activity-time"></span>
+                </div>
+              </div>
+              <div class="activity-item">
+                <div class="activity-icon customer-icon"></div>
+                <div class="activity-info">
+                  <p class="activity-text"></p>
+                  <span class="activity-time"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
