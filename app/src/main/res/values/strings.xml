@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">GadgetCart</string>
+
+    <!--WELCOME PAGE-->
+    <string name="welcome_title"><font color="#61C8F5">Welcome</font>  <font color="000000">to</font> <font color="#61C8F5">Gadget</font> <font color="000000">Cart</font></string>
+    <string name="welcome_text">"Find the latest tech, best deals, and\n exclusive offers—all in one place.\n Start shopping now!</string>
+    <string name="sign_in">Do you have an account?</string>
+    <string name="hint_username">Username</string>
+    <string name="hint_password">Password</string>
+</resources>

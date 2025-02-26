@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- When button is pressed (hover effect) -->
+    <item android:state_pressed="true" android:color="#ffffff"/>
+
+    <!-- When button is focused -->
+    <item android:state_focused="true" android:color="#FCE77D"/>
+
+    <!-- Default text color -->
+    <item android:color="#ffffff"/>
+</selector>
