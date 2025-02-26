@@ -17,7 +17,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GadgetCart">
 
-        <!-- Launcher Activity -->
         <activity
             android:name=".WelcomeActivity"
             android:exported="true"
@@ -29,7 +28,6 @@
             </intent-filter>
         </activity>
 
-        <!-- Other Activities -->
         <activity android:name=".MainActivity"/>
         <activity android:name=".SignInActivity" android:exported="true"/>
         <activity android:name=".SignUpActivity"/>
