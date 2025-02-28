@@ -7,4 +7,5 @@
     <string name="sign_in">Do you have an account?</string>
     <string name="hint_username">Username</string>
     <string name="hint_password">Password</string>
+    <string name="instruction"> Enter your email to reset your password.\n We'll send you a link to create a new password.</string>
 </resources>

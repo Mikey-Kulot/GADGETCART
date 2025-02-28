@@ -15,11 +15,11 @@ class SignUpActivity : AppCompatActivity() {
         binding = SignUpBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.btnSignUp.setOnClickListener {
+        binding.btnCreate.setOnClickListener {
             startActivity(Intent(this@SignUpActivity, MainActivity::class.java))
         }
 
-        binding.tvSignInLink.setOnClickListener {
+        binding.tvLogin.setOnClickListener {
             startActivity(Intent(this@SignUpActivity, SignInActivity::class.java))
         }
 
@@ -35,7 +35,7 @@ class SignUpActivity : AppCompatActivity() {
             togglePasswordVisibility(binding.etPassword)
         }
         binding.confirmPassword.setEndIconOnClickListener {
-            togglePasswordVisibility(binding.etConfirmPassword)
+            togglePasswordVisibility(binding.etConfirmPass)
         }
     }
 
