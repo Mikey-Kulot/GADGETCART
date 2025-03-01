@@ -15,6 +15,7 @@
     <div class="logsign">
         <div class="formbox log">
             <form action="" method="post" class="forms">
+
                 <img src="../image/86a1c8c5-7906-4578-86fa-5c167f0b65ff.jpg" alt="Web Logo" class="logo">
                 <h1 class="log">Login</h1>
                 <div class="input-box">
@@ -43,6 +44,7 @@
 
         <div class="formbox reg">
             <form action="" method="post" class="forms">
+
                 <img src="../image/86a1c8c5-7906-4578-86fa-5c167f0b65ff.jpg" alt="Web Logo" class="logo">
                 <h1>Register</h1>
                 <div class="input-box">
@@ -181,6 +183,9 @@ if (isset($_POST['user_login'])) {
     if ($row_data) {
         if (password_verify($user_password, $row_data['password_hash'])) {
             echo "<script>alert('Login Successful!');</script>";
+
+            echo "<script>window.location.href = '../main_page/main.php';</script>";
+
         } else {
             echo "<script>alert('Invalid Credentials');</script>";
         }
