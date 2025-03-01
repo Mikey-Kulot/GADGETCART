@@ -1,0 +1,192 @@
+/* Animation Keyframes */
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slideInLeft {
+    from {
+      transform: translateX(-50px);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slideInRight {
+    from {
+      transform: translateX(50px);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      transform: translateY(30px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.02);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  @keyframes float {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes rotate {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  /* Animation Classes */
+  .fade-in {
+    animation: fadeIn 1s ease forwards;
+  }
+  
+  .slide-in-left {
+    animation: slideInLeft 0.8s ease forwards;
+  }
+  
+  .slide-in-right {
+    animation: slideInRight 0.8s ease forwards;
+  }
+  
+  .fade-in-up {
+    animation: fadeInUp 0.8s ease forwards;
+    opacity: 0;
+  }
+  
+  .pulse-effect {
+    animation: pulse 3s infinite ease-in-out;
+  }
+  
+  .float-effect {
+    animation: float 4s infinite ease-in-out;
+  }
+  
+  .rotate-effect {
+    animation: rotate 10s linear infinite;
+  }
+  
+  /* Hover Animations */
+  .nav-link {
+    position: relative;
+  }
+  
+  .nav-link::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background-color: #00a5fe;
+    transition: width 0.3s ease;
+  }
+  
+  .nav-link:hover::after {
+    width: 100%;
+  }
+  
+  .search-container {
+    transition: box-shadow 0.3s ease;
+  }
+  
+  .search-container:hover {
+    box-shadow: 0 0 10px rgba(0, 165, 254, 0.3);
+  }
+  
+  .view-all-container:hover .view-all-icon {
+    animation: slideInRight 0.5s ease forwards;
+  }
+  
+  /* Heart Icon Animation */
+  .heart-icon::before {
+    content: "♥";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 14px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .heart-icon:hover::before {
+    opacity: 1;
+  }
+  
+  /* Product Card Hover Effects */
+  .product-card:hover .product-title,
+  .product-card-grid:hover .product-title {
+    color: #00a5fe;
+    transition: color 0.3s ease;
+  }
+  
+  /* Banner Image Animation */
+  .banner-image {
+    transition: transform 0.5s ease;
+  }
+  
+  .banner-image:hover {
+    transform: scale(1.01);
+  }
+  
+  /* Staggered Animation Delays */
+  .product-grid article:nth-child(1) {
+    animation-delay: 0.1s;
+  }
+  
+  .product-grid article:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+  
+  .product-grid article:nth-child(3) {
+    animation-delay: 0.3s;
+  }
+  
+  .product-grid article:nth-child(4) {
+    animation-delay: 0.4s;
+  }
+  
+  .product-grid article:nth-child(5) {
+    animation-delay: 0.5s;
+  }
+  
