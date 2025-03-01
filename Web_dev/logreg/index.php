@@ -184,7 +184,7 @@ if (isset($_POST['user_login'])) {
         if (password_verify($user_password, $row_data['password_hash'])) {
             echo "<script>alert('Login Successful!');</script>";
 
-            echo "<script>window.location.href = '../main_page/main.php';</script>";
+            echo "<script>window.location.href = '../home_page/main.php';</script>";
 
         } else {
             echo "<script>alert('Invalid Credentials');</script>";
