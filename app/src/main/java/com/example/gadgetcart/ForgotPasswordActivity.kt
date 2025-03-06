@@ -13,15 +13,7 @@ class ForgotPasswordActivity : AppCompatActivity() {
         binding = ForgotPasswordBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.btnBack.setOnClickListener{
-            startActivity(Intent(this@ForgotPasswordActivity, WelcomeActivity::class.java))
-        }
-
-        binding.btnAbout.setOnClickListener{
-            startActivity(Intent(this@ForgotPasswordActivity, SignUpActivity::class.java))
-        }
-
-        binding.btnReset.setOnClickListener{
+        binding.btnResetPassword.setOnClickListener{
             startActivity(Intent(this@ForgotPasswordActivity, SignInActivity::class.java))
         }
     }

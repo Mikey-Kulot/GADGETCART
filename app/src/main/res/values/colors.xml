@@ -10,5 +10,7 @@
     <color name="transparent">#00000000</color>
     <color name="dots_selected_color">#FF0000</color>
     <color name="category_border">#BFBFBF</color>
+    <color name="blue">#61C8F5</color>
 
+    <color name="buttons">#01AED8</color>
 </resources>

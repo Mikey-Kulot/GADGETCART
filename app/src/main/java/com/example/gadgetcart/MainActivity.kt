@@ -40,8 +40,8 @@ class MainActivity : BaseActivity() {
 
         //Flash Sale Items
         val flashSaleItems = listOf(
-            FlashsaleModel(R.drawable.banner),
-            FlashsaleModel(R.drawable.banner1)
+            FlashsaleModel(R.drawable.image_flashsale),
+            FlashsaleModel(R.drawable.image_flashsale)
         )
 
         setupBanners(flashSaleItems)
