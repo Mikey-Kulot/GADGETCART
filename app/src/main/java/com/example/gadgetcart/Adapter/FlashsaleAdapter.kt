@@ -15,15 +15,13 @@ class FlashsaleAdapter(
         RecyclerView.ViewHolder(binding.root) {
 
         fun bind(sliderItem: FlashsaleModel) {
-            // Load Image with Glide
             Glide.with(binding.root.context)
                 .load(sliderItem.image)
-                .into(binding.ivFlashsale)
+                .into(binding.flashSlider)
         }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SliderViewHolder {
-        // Use View Binding properly
         val binding = FlashsaleItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return SliderViewHolder(binding)
     }

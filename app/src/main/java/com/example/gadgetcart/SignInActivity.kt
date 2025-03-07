@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.text.InputType
 import android.view.MotionEvent
 import android.widget.EditText
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.gadgetcart.databinding.SignInBinding
 
@@ -18,7 +19,14 @@ class SignInActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.btnSignIn.setOnClickListener {
-            startActivity(Intent(this@SignInActivity, MainActivity::class.java))
+            val username = binding.etUsername.text.toString().trim()
+            val password = binding.etPassword.text.toString().trim()
+
+            if(validateInputs(username, password)){
+                val intent = Intent(this, MainActivity::class.java)
+                intent.putExtra("USERNAME", username)
+                startActivity(intent)
+            }
         }
 
         binding.tvSignUp.setOnClickListener{
@@ -30,6 +38,23 @@ class SignInActivity : AppCompatActivity() {
         }
 
         setupPasswordToggle()
+    }
+
+    private fun validateInputs(username: String, password: String): Boolean {
+        if(username.isEmpty()){
+            showToast("Username is required")
+            return false
+        }
+        if (password.isEmpty() || password.length < 6){
+            showToast("Password must contain 6 characters")
+            return false
+        }
+            return true
+    }
+
+    private fun showToast(message: String) {
+        Toast.makeText(applicationContext, message, Toast.LENGTH_SHORT).show()
+
     }
 
     private fun setupPasswordToggle() {
@@ -48,10 +73,10 @@ class SignInActivity : AppCompatActivity() {
     private fun togglePasswordVisibility(editText: EditText) {
         if (isPasswordVisible) {
             editText.inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PASSWORD
-            editText.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.visible, 0) // Eye closed icon
+            editText.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.visible, 0)
         } else {
             editText.inputType = InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD
-            editText.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.visibility, 0) // Eye open icon
+            editText.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.visibility, 0)
         }
         editText.setSelection(editText.text?.length ?: 0)
         isPasswordVisible = !isPasswordVisible

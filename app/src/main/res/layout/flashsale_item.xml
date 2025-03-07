@@ -1,13 +1,10 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8" ?>
+<ImageView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg">
+    android:minHeight="150dp"
+    android:id="@+id/flashSlider"
+    android:scaleType="fitCenter"
+    android:adjustViewBounds="false">
 
-    <ImageView
-        android:id="@+id/ivFlashsale"
-        android:layout_width="200dp"
-        android:layout_height="150dp"
-        android:layout_marginStart="100dp"
-        android:scaleType="centerCrop"/>
-
-</FrameLayout>
+</ImageView>

@@ -12,7 +12,6 @@
         android:layout_height="wrap_content"
         android:padding="8dp">
 
-        <!-- Product Image -->
         <ImageView
             android:id="@+id/iv_productimage"
             android:layout_width="0dp"
@@ -24,7 +23,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
 
-        <!-- Favorite Icon -->
         <ImageView
             android:id="@+id/iv_favorite"
             android:layout_width="24dp"
@@ -34,7 +32,6 @@
             app:layout_constraintEnd_toEndOf="@id/iv_productimage"
             app:layout_constraintTop_toTopOf="@id/iv_productimage" />
 
-        <!-- Product Name -->
         <TextView
             android:id="@+id/tv_productname"
             android:layout_width="0dp"
@@ -47,7 +44,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
 
-        <!-- Rating Star -->
         <ImageView
             android:id="@+id/imageView2"
             android:layout_width="18dp"
@@ -57,7 +53,6 @@
             app:layout_constraintStart_toStartOf="parent"
             android:layout_marginTop="4dp"/>
 
-        <!-- Rating Number -->
         <TextView
             android:id="@+id/tv_rating"
             android:layout_width="wrap_content"
@@ -69,7 +64,6 @@
             app:layout_constraintTop_toTopOf="@id/imageView2"
             android:layout_marginStart="4dp"/>
 
-        <!-- Product Price -->
         <TextView
             android:id="@+id/tv_price"
             android:layout_width="wrap_content"

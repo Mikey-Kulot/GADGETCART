@@ -23,7 +23,12 @@ class MainActivity : BaseActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Categories List
+        setupCategories()
+        setupFlashSale()
+        setupJustForYouProducts()
+    }
+
+    private fun setupCategories() {
         val categories = listOf(
             Category("Cellphone", R.drawable.cellphone),
             Category("Tablet", R.drawable.tablet),
@@ -37,16 +42,33 @@ class MainActivity : BaseActivity() {
         binding.viewCategory.layoutManager =
             LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
         binding.viewCategory.adapter = CategoryAdapter(this, categories)
+    }
 
-        //Flash Sale Items
+    private fun setupFlashSale() {
         val flashSaleItems = listOf(
             FlashsaleModel(R.drawable.image_flashsale),
             FlashsaleModel(R.drawable.image_flashsale)
         )
 
-        setupBanners(flashSaleItems)
+        val flashSaleAdapter = FlashsaleAdapter(flashSaleItems)
+        binding.viewPager.adapter = flashSaleAdapter
+        binding.viewPager.clipToPadding = false
+        binding.viewPager.clipChildren = false
+        binding.viewPager.offscreenPageLimit = 2
+        binding.viewPager.getChildAt(0)?.overScrollMode = RecyclerView.OVER_SCROLL_NEVER
 
-        // Just For You Products
+        val compositePageTransformer = CompositePageTransformer().apply {
+            addTransformer(MarginPageTransformer(40))
+        }
+        binding.viewPager.setPageTransformer(compositePageTransformer)
+
+        if (flashSaleItems.size > 1) {
+            binding.dotsIndicator.visibility = View.VISIBLE
+            binding.dotsIndicator.attachTo(binding.viewPager)
+        }
+    }
+
+    private fun setupJustForYouProducts() {
         val justForYouProducts = listOf(
             Product(R.drawable.ryzen, "AMD Ryzen 7", 4.7f, "$299.99", false),
             Product(R.drawable.imac, "Apple iMac M1", 4.9f, "$1299.99", false),
@@ -56,34 +78,5 @@ class MainActivity : BaseActivity() {
 
         binding.viewForyou.layoutManager = GridLayoutManager(this, 2)
         binding.viewForyou.adapter = ProductAdapter(justForYouProducts)
-    }
-
-        private fun setupBanners(imageList: List<FlashsaleModel>) {
-        val flashSaleAdapter = FlashsaleAdapter(imageList)
-        binding.viewPager.adapter = flashSaleAdapter
-        binding.viewPager.clipToPadding = false
-        binding.viewPager.clipChildren = false
-        binding.viewPager.offscreenPageLimit = 2
-        binding.viewPager.getChildAt(0).overScrollMode = RecyclerView.OVER_SCROLL_NEVER
-
-        val compositePageTransformer = CompositePageTransformer().apply {
-            addTransformer(MarginPageTransformer(40))
-        }
-        binding.viewPager.setPageTransformer(compositePageTransformer)
-
-        if (imageList.size > 1) {
-            binding.dotsIndicator.visibility = View.VISIBLE
-            binding.dotsIndicator.attachTo(binding.viewPager)
-        }
-
-        // Adjust ViewPager height dynamically
-        binding.viewPager.post {
-            val layoutParams = binding.viewPager.layoutParams
-            val firstChild = binding.viewPager.getChildAt(0)
-            if (firstChild != null) {
-                layoutParams.height = firstChild.height
-                binding.viewPager.layoutParams = layoutParams
-            }
-        }
     }
 }

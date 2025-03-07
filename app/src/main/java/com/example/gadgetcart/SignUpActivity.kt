@@ -3,8 +3,10 @@ package com.example.gadgetcart
 import android.content.Intent
 import android.os.Bundle
 import android.text.InputType
+import android.util.Patterns
 import android.view.MotionEvent
 import android.widget.EditText
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.gadgetcart.databinding.SignUpBinding
 
@@ -18,8 +20,18 @@ class SignUpActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.btnSignUp.setOnClickListener {
-            startActivity(Intent(this@SignUpActivity, MainActivity::class.java))
+            val username = binding.etUsername.text.toString().trim()
+            val email = binding.etEmail.text.toString().trim()
+            val password = binding.etPassword.text.toString().trim()
+            val confirmPassword = binding.etConfirmPassword.text.toString().trim()
+
+            if(validateInputs(username, email, password, confirmPassword)){
+                val intent = Intent(this, MainActivity::class.java)
+                intent.putExtra("USERNAME", username)
+                startActivity(intent)
+            }
         }
+
 
         binding.tvSignIn.setOnClickListener {
             startActivity(Intent(this@SignUpActivity, SignInActivity::class.java))
@@ -30,6 +42,33 @@ class SignUpActivity : AppCompatActivity() {
         }
 
         setupPasswordToggle()
+    }
+
+    private fun validateInputs(username: String, email: String, password: String, confirmPassword: String): Boolean {
+        if(username.isEmpty()) {
+            showToast("Username is required")
+            return false
+        }
+
+        if(email.isEmpty() || !Patterns.EMAIL_ADDRESS.matcher(email).matches()){
+            showToast("Enter a valid email address")
+            return false
+        }
+        if (password.isEmpty() || password.length < 6){
+            showToast("Password must contain 6 characters")
+            return false
+        }
+        if (confirmPassword.isEmpty() || confirmPassword !=password){
+            showToast("Password do not match")
+            return false
+
+        }
+        return true
+    }
+
+    private fun showToast(message: String) {
+        Toast.makeText(applicationContext, message, Toast.LENGTH_SHORT).show()
+
     }
 
     private fun setupPasswordToggle() {
