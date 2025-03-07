@@ -7,8 +7,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
-    tools:context=".SignInActivity"
-    android:padding="16dp">
+    tools:context=".SignInActivity">
 
     <ImageView
         android:layout_marginTop="-200dp"

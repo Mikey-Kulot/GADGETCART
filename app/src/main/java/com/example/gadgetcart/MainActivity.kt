@@ -32,9 +32,9 @@ class MainActivity : BaseActivity() {
         val categories = listOf(
             Category("Cellphone", R.drawable.cellphone),
             Category("Tablet", R.drawable.tablet),
-            Category("Computer", R.drawable.imac),
+            Category("Computer", R.drawable.monitor),
             Category("Laptop", R.drawable.laptop),
-            Category("Accessories", R.drawable.headphone),
+            Category("Accessories", R.drawable.headphones),
             Category("Smartwatch", R.drawable.smartwatch),
             Category("Drones", R.drawable.drone)
         )

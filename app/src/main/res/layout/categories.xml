@@ -15,7 +15,7 @@
         android:layout_height="45dp"
         android:src="@drawable/categories_bg"
         android:background="@drawable/categories_bg"
-        android:scaleType="fitCenter"/>
+        android:scaleType="centerInside" />
 
     <TextView
         android:id="@+id/tvCategory"
