@@ -13,8 +13,8 @@
         android:id="@+id/ivCategory"
         android:layout_width="45dp"
         android:layout_height="45dp"
-        android:src="@drawable/categories_bg"
-        android:background="@drawable/categories_bg"
+        android:src="@drawable/grey_bg"
+        android:background="@drawable/grey_bg"
         android:scaleType="centerInside" />
 
     <TextView
@@ -23,6 +23,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:text="PC"
+        android:layout_marginStart="5dp"
         android:gravity="center_horizontal"
         android:textColor="@color/black"
         android:textSize="12sp"

@@ -10,7 +10,7 @@
     tools:context=".SignUpActivity">
 
     <ImageView
-        android:layout_marginTop="-100dp"
+        android:layout_marginTop="-150dp"
         android:layout_width="250dp"
         android:layout_height="150dp"
         android:src="@drawable/logo_1" />
@@ -75,11 +75,20 @@
             android:background="@color/transparent"
             android:hint="Password"
             android:paddingStart="20dp"
-            android:paddingEnd="20dp"
+            android:paddingEnd="60dp"
             android:textSize="16sp"
             android:inputType="textPassword"
-            android:drawableEnd="@drawable/password_toggle"
             android:maxLines="1"/>
+
+        <ImageView
+            android:id="@+id/ivToggle1"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="10dp"
+            android:padding="5dp"
+            android:src="@drawable/ic_eye_closed"/>
     </RelativeLayout>
 
 
@@ -96,13 +105,22 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@color/transparent"
-            android:hint="Confirm Password"
+            android:hint="Password"
             android:paddingStart="20dp"
-            android:paddingEnd="20dp"
+            android:paddingEnd="60dp"
             android:textSize="16sp"
             android:inputType="textPassword"
-            android:drawableEnd="@drawable/password_toggle"
             android:maxLines="1"/>
+
+        <ImageView
+            android:id="@+id/ivToggle2"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="10dp"
+            android:padding="5dp"
+            android:src="@drawable/ic_eye_closed"/>
     </RelativeLayout>
 
     <TextView
