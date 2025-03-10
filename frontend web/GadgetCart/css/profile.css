@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'DM Sans', sans-serif;
+}
+
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 20px;
+    padding: 0;
+}
+
+/* Header */
+.top-head {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: #f8f8f8; 
+    padding: 10px 60px;
+    width: 100%;
+}
+
+
+.toph {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.toph .tophead a {
+    text-decoration: none;
+    color: #000;
+    font-size: 14px;
+    font-weight: bold;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.toph .tophead a:hover {
+    color: #007bff;
+    transform: scale(1.1);
+}
+
+/*                      */
+
+
+
+/* Navbar */
+.navbar {
+    border: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 60px;
+    position: relative; 
+    width: 100%;
+}
+
+.nav-links {
+    display: flex;
+    gap: 5em;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #009CFF;
+    position: relative;
+    padding-bottom: 5px;
+
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #009CFF;
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+
+
+.logo img {
+    height: 50px;
+    width: auto;
+}
+
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    max-width: 500px;
+    margin: 0 20px;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.search-bar input {
+    width: 100%;
+    padding: 8px 12px;
+    padding-right: 40px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    outline: none;
+}
+
+.search-bar input:focus {
+    border-color: #009CFF;
+    box-shadow: 0 0 5px rgba(0, 156, 255, 0.5);
+}
+
+.search-bar input:focus {
+    border-color: #009CFF;
+    box-shadow: 0 0 5px rgba(0, 156, 255, 0.5); 
+}
+
+.search-bar .material-symbols-outlined {
+    position: absolute;
+    right: 10px;
+    color: gray;
+    cursor: pointer;
+}
