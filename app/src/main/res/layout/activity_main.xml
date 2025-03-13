@@ -6,7 +6,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="10dp"
+    android:background="@color/white"
     tools:context=".MainActivity">
 
     <ScrollView
@@ -205,7 +205,7 @@
               android:id="@+id/ib_homeicon"
               android:layout_width="60dp"
               android:layout_height="match_parent"
-              android:src="@drawable/homeicon_page"
+              android:src="@drawable/home_icon"
               android:layout_marginStart="30dp"
               android:layout_marginTop="3dp"
               android:background="@color/transparent"
@@ -215,11 +215,11 @@
                 android:id="@+id/ib_wishlist"
                 android:layout_width="60dp"
                 android:layout_height="match_parent"
-                android:src="@drawable/fav_icon"
+                android:src="@drawable/tracking_ic"
                 android:layout_marginTop="-60dp"
                 android:layout_marginStart="180dp"
                 android:background="@color/transparent"
-                android:contentDescription="Wishlist"/>
+                android:contentDescription="Tracking Order"/>
 
             <ImageButton
                 android:id="@+id/ib_profile"
