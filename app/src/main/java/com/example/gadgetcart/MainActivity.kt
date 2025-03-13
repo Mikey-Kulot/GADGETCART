@@ -1,5 +1,6 @@
 package com.example.gadgetcart
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.recyclerview.widget.GridLayoutManager
@@ -16,13 +17,12 @@ import com.example.gadgetcart.model.Category
 import com.example.gadgetcart.model.Product
 
 class MainActivity : BaseActivity() {
-    private lateinit var binding: ActivityMainBinding
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        setupNavigation()
         setupCategories()
         setupFlashSale()
         setupJustForYouProducts()
