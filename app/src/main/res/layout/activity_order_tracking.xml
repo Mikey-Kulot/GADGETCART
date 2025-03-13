@@ -226,7 +226,7 @@
                     android:contentDescription="Home Icon"/>
 
                 <ImageButton
-                    android:id="@+id/ib_wishlist"
+                    android:id="@+id/ib_tracking"
                     android:layout_width="60dp"
                     android:layout_height="match_parent"
                     android:src="@drawable/tracking"

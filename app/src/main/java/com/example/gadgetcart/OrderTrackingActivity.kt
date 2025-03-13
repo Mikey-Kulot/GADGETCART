@@ -19,7 +19,7 @@ class OrderTrackingActivity : AppCompatActivity() {
         binding.ibHomeicon.setOnClickListener {
         }
 
-        binding.ibWishlist.setOnClickListener {
+        binding.ibTracking.setOnClickListener {
         }
 
         binding.ibProfile.setOnClickListener {
@@ -37,6 +37,6 @@ class OrderTrackingActivity : AppCompatActivity() {
     }
 
     private fun highlightTrackingOrder() {
-        binding.ibWishlist.setBackgroundResource(R.drawable.tracking_selected)
+        binding.ibTracking.setBackgroundResource(R.drawable.tracking_selected)
     }
 }
