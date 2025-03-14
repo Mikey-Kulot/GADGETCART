@@ -1,16 +1,19 @@
 package com.example.gadgetcart
 
+import android.content.Intent
 import android.os.Bundle
 import android.text.InputType
 import android.text.method.PasswordTransformationMethod
 import android.widget.EditText
 import android.widget.ImageView
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 
 class SignInActivity : AppCompatActivity() {
 
     private lateinit var etPassword: EditText
     private lateinit var ivTogglePassword: ImageView
+    private lateinit var tvSignUp: TextView
     private var isPasswordVisible = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -19,9 +22,15 @@ class SignInActivity : AppCompatActivity() {
 
         etPassword = findViewById(R.id.etPassword)
         ivTogglePassword = findViewById(R.id.ivTogglePassword)
+        tvSignUp = findViewById(R.id.tvSignUp)
 
         ivTogglePassword.setOnClickListener {
             togglePasswordVisibility()
+        }
+
+        tvSignUp.setOnClickListener {
+            val intent = Intent(this@SignInActivity, SignUpActivity::class.java)
+            startActivity(intent)
         }
     }
 
