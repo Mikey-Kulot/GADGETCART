@@ -19,15 +19,6 @@ class ProductAdapter(private val productList: List<Product>) :
             binding.tvProductname.text = product.name
             binding.tvPrice.text = product.price.toString()
             binding.tvRating.text = product.rating
-
-            val favoriteIconRes = if (product.isFavorite) {
-                R.drawable.heart_filled
-            } else {
-                R.drawable.heart_icon
-            }
-            binding.ivFavorite.setImageResource(favoriteIconRes)
-            binding.ivFavorite.setOnClickListener {
-            }
         }
     }
 

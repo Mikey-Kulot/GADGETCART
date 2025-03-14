@@ -17,8 +17,8 @@ class WelcomeActivity : AppCompatActivity() {
             startActivity(Intent(this@WelcomeActivity, SignInActivity::class.java))
         }
 
-        binding.tvDes.setOnClickListener {
-            startActivity(Intent(this@WelcomeActivity, SignInActivity::class.java))
+        binding.tvSignUp.setOnClickListener {
+            startActivity(Intent(this@WelcomeActivity, SignUpActivity::class.java))
         }
     }
 }

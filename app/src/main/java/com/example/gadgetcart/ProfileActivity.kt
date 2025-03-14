@@ -6,6 +6,7 @@ import android.net.Uri
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.gadgetcart.databinding.ActivityProfileBinding
+import com.example.gadgetcart.OrderTrackingActivity
 
 class ProfileActivity : AppCompatActivity() {
 
