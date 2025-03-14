@@ -42,6 +42,8 @@ class OrderTrackingActivity : AppCompatActivity() {
             finish()
         }
 
+        binding.ibTracking.setImageResource(R.drawable.tracking_selected)
+
         binding.ibProfile.setOnClickListener {
             startActivity(Intent(this, ProfileActivity::class.java))
             finish()

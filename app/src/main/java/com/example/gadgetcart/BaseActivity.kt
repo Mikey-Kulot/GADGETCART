@@ -25,6 +25,8 @@ open class BaseActivity : AppCompatActivity() {
                 navigateTo(MainActivity::class.java)
             }
 
+            binding.ibHomeicon.setImageResource(R.drawable.homeicon_page)
+
             binding.ibTracking.setOnClickListener {
                 navigateTo(OrderTrackingActivity::class.java)
             }
@@ -35,9 +37,6 @@ open class BaseActivity : AppCompatActivity() {
         }
     }
 
-    private fun highlightHome() {
-        binding.ibHomeicon.setBackgroundResource(R.drawable.homeicon_page)
-    }
 
     private fun navigateTo(targetActivity: Class<*>) {
         val intent = Intent(this, targetActivity)

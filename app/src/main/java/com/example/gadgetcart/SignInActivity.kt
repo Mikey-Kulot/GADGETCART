@@ -4,33 +4,38 @@ import android.content.Intent
 import android.os.Bundle
 import android.text.InputType
 import android.text.method.PasswordTransformationMethod
-import android.widget.EditText
-import android.widget.ImageView
-import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.gadgetcart.databinding.SignInBinding
 
 class SignInActivity : AppCompatActivity() {
 
-    private lateinit var etPassword: EditText
-    private lateinit var ivTogglePassword: ImageView
-    private lateinit var tvSignUp: TextView
+    private lateinit var binding: SignInBinding
     private var isPasswordVisible = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.sign_in)
+        binding = SignInBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        etPassword = findViewById(R.id.etPassword)
-        ivTogglePassword = findViewById(R.id.ivTogglePassword)
-        tvSignUp = findViewById(R.id.tvSignUp)
-
-        ivTogglePassword.setOnClickListener {
+        binding.ivTogglePassword.setOnClickListener {
             togglePasswordVisibility()
         }
 
-        tvSignUp.setOnClickListener {
+        binding.tvSignUp.setOnClickListener {
             val intent = Intent(this@SignInActivity, SignUpActivity::class.java)
             startActivity(intent)
+        }
+
+        binding.btnSignIn.setOnClickListener {
+            val username = binding.etUsername.text.toString().trim()
+            val password = binding.etPassword.text.toString().trim()
+
+            if (username.isEmpty() || password.isEmpty()) {
+                Toast.makeText(this, "Please enter both username and password", Toast.LENGTH_SHORT).show()
+            } else {
+                Toast.makeText(this, "Please sign up first", Toast.LENGTH_SHORT).show()
+            }
         }
     }
 
@@ -38,15 +43,15 @@ class SignInActivity : AppCompatActivity() {
         isPasswordVisible = !isPasswordVisible
 
         if (isPasswordVisible) {
-            etPassword.inputType = InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD
-            etPassword.transformationMethod = null
-            ivTogglePassword.setImageResource(R.drawable.ic_eye_open)
+            binding.etPassword.inputType = InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD
+            binding.etPassword.transformationMethod = null
+            binding.ivTogglePassword.setImageResource(R.drawable.ic_eye_open)
         } else {
-            etPassword.inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PASSWORD
-            etPassword.transformationMethod = PasswordTransformationMethod.getInstance()
-            ivTogglePassword.setImageResource(R.drawable.ic_eye_closed)
+            binding.etPassword.inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PASSWORD
+            binding.etPassword.transformationMethod = PasswordTransformationMethod.getInstance()
+            binding.ivTogglePassword.setImageResource(R.drawable.ic_eye_closed)
         }
 
-        etPassword.setSelection(etPassword.text.length)
+        binding.etPassword.setSelection(binding.etPassword.text.length)
     }
 }
