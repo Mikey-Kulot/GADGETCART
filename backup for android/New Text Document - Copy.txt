@@ -1,0 +1,111 @@
+<?php
+// register.php
+
+require 'database_connect.php';
+
+// Log errors for debugging
+ini_set('display_errors', 0);
+ini_set('log_errors', 1);
+ini_set('error_log', 'C:/xampp/logs/php_errors.log'); // Adjust path if needed
+
+// Set content type to JSON
+header('Content-Type: application/json');
+
+$response = array();
+
+if (!$con) {
+    $response["status"] = "error";
+    $response["result_code"] = 0;
+    $response["message"] = "Database connection failed: " . mysqli_connect_error();
+    $response["username"] = "";
+    echo json_encode($response);
+    exit();
+}
+
+// Capture POST data (no 'name' field needed)
+$username = mysqli_real_escape_string($con, $_POST['username'] ?? '');
+$email = mysqli_real_escape_string($con, $_POST['email'] ?? '');
+$password = $_POST['password'] ?? '';
+$conf_password = $_POST['conf_password'] ?? '';
+
+// Validation
+if (empty($username) || empty($email) || empty($password) || empty($conf_password)) {
+    $response["status"] = "error";
+    $response["result_code"] = 0;
+    $response["message"] = "All fields are required";
+    $response["username"] = $username;
+    echo json_encode($response);
+    exit();
+}
+
+if (strlen($password) < 6) {
+    $response["status"] = "error";
+    $response["result_code"] = 0;
+    $response["message"] = "Password must be at least 6 characters long";
+    $response["username"] = $username;
+    echo json_encode($response);
+    exit();
+}
+
+if ($password !== $conf_password) {
+    $response["status"] = "error";
+    $response["result_code"] = 0;
+    $response["message"] = "Passwords do not match";
+    $response["username"] = $username;
+    echo json_encode($response);
+    exit();
+}
+
+if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    $response["status"] = "error";
+    $response["result_code"] = 0;
+    $response["message"] = "Invalid email format";
+    $response["username"] = $username;
+    echo json_encode($response);
+    exit();
+}
+
+// Check for existing user
+$select_query = "SELECT * FROM users WHERE username = '$username' OR email = '$email'";
+$result = mysqli_query($con, $select_query);
+if (!$result) {
+    $response["status"] = "error";
+    $response["result_code"] = 0;
+    $response["message"] = "Query failed: " . mysqli_error($con);
+    $response["username"] = $username;
+    echo json_encode($response);
+    exit();
+}
+
+if (mysqli_num_rows($result) > 0) {
+    $response["status"] = "error";
+    $response["result_code"] = 0;
+    $response["message"] = "Username or email already exists";
+    $response["username"] = $username;
+    echo json_encode($response);
+    exit();
+}
+
+// Hash password and insert (no 'name' column)
+$hashed_password = password_hash($password, PASSWORD_DEFAULT);
+$insert_query = "INSERT INTO users (username, email, password) VALUES ('$username', '$email', '$hashed_password')";
+$sql_execute = mysqli_query($con, $insert_query);
+if (!$sql_execute) {
+    $response["status"] = "error";
+    $response["result_code"] = 0;
+    $response["message"] = "Insert failed: " . mysqli_error($con);
+    $response["username"] = $username;
+    echo json_encode($response);
+    exit();
+}
+
+// Success response (no 'name' field)
+$response["status"] = "ok";
+$response["result_code"] = 1;
+$response["message"] = "Registration successful";
+$response["username"] = $username;
+
+echo json_encode($response);
+
+mysqli_close($con);
+?>
