@@ -24,7 +24,7 @@ class ApiClient {
 
         val instance: Retrofit by lazy {
             val gson = GsonBuilder()
-                .setLenient() // Add this to handle malformed JSON
+                .setLenient()
                 .create()
 
             Retrofit.Builder()
