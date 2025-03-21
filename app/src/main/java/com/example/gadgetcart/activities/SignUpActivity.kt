@@ -46,7 +46,6 @@ class SignUpActivity : AppCompatActivity() {
         binding.tvForgotPassword.setOnClickListener {
             startActivity(Intent(this@SignUpActivity, ForgotPasswordActivity::class.java))
         }
-
         setupPasswordToggle(binding.etPassword) { isPasswordVisible = !isPasswordVisible }
         setupPasswordToggle(binding.etConfirmPassword) { isConfirmPasswordVisible = !isConfirmPasswordVisible }
     }
